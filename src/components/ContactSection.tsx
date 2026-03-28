@@ -62,7 +62,7 @@ const ContactSection = () => {
               <Mail className="w-5 h-5 text-primary mt-1 shrink-0" />
               <div>
                 <p className="font-display text-base font-semibold text-foreground">Email</p>
-                <p className="font-body text-sm text-muted-foreground">hello@tanveda.com</p>
+                <p className="font-body text-sm text-muted-foreground">tanvedasoaps@gmail.com</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
