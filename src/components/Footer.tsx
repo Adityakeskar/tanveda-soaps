@@ -3,7 +3,7 @@ const Footer = () => (
     <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <div>
         <p className="font-display text-xl font-bold tracking-wide">Tanveda</p>
-        <p className="font-body text-xs opacity-60 mt-1">Handcrafted Organic Soaps</p>
+        <p className="font-body text-xs opacity-60 mt-1">Pure care, everyday.</p>
       </div>
       <p className="font-body text-xs opacity-50">
         &copy; {new Date().getFullYear()} Tanveda. All rights reserved.

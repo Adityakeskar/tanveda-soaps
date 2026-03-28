@@ -1,21 +1,29 @@
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-soap.jpg";
+import logo from "@/assets/tanveda-logo.jpeg";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center section-padding pt-28" style={{ background: "var(--gradient-hero)" }}>
     <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-      {/* Text */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
+        <motion.img
+          src={logo}
+          alt="Tanveda logo"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="w-24 h-24 rounded-2xl object-cover mb-6 shadow-lg"
+        />
         <span className="inline-block font-body text-sm tracking-[0.25em] uppercase text-accent mb-4">
           Handcrafted &bull; Organic &bull; Herbal
         </span>
-        <h1 className="heading-display text-foreground mb-6">
-          Pure Nature,{" "}
-          <span className="text-primary italic">Gentle Care</span>
+        <h1 className="heading-display text-foreground mb-3">
+          Pure Care,{" "}
+          <span className="text-primary italic">Everyday.</span>
         </h1>
         <p className="text-body-lg max-w-lg mb-8">
           Tanveda brings you handcrafted, herbal bathing soaps made with love from nature's finest ingredients — gentle on every skin type.
@@ -36,7 +44,6 @@ const HeroSection = () => (
         </div>
       </motion.div>
 
-      {/* Image */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -46,13 +53,12 @@ const HeroSection = () => (
         <div className="rounded-3xl overflow-hidden shadow-2xl">
           <img
             src={heroImg}
-            alt="Tanveda handcrafted organic soaps on a wooden tray with herbs"
+            alt="Tanveda handcrafted organic soaps"
             width={1280}
             height={720}
             className="w-full h-auto object-cover"
           />
         </div>
-        {/* Floating badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
