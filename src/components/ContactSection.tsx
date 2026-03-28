@@ -19,10 +19,13 @@ const ContactSection = () => {
     }
     setSending(true);
 
-    // For now, simulate send — real email will use Lovable Cloud
-    await new Promise((r) => setTimeout(r, 1200));
-    toast.success("Thank you! We'll get back to you soon.");
-    setForm({ name: "", email: "", message: "" });
+    const subject = encodeURIComponent(`New inquiry from ${form.name.trim()}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\n\nMessage:\n${form.message.trim()}`
+    );
+    window.location.href = `mailto:tanvedasoaps@gmail.com?subject=${subject}&body=${body}`;
+
+    toast.success("Opening your email client…");
     setSending(false);
   };
 
