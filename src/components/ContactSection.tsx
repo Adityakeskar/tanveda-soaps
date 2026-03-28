@@ -1,33 +1,10 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin } from "lucide-react";
-import { toast } from "sonner";
+import { MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sending, setSending] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      toast.error("Please fill in all fields.");
-      return;
-    }
-    setSending(true);
-
-    const subject = encodeURIComponent(`New inquiry from ${form.name.trim()}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\n\nMessage:\n${form.message.trim()}`
-    );
-    window.location.href = `mailto:tanvedasoaps@gmail.com?subject=${subject}&body=${body}`;
-
-    toast.success("Opening your email client…");
-    setSending(false);
-  };
+  const whatsappNumber = "919XXXXXXXXX"; // Replace with actual number
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
+  const instagramHandle = "tanvedasoaps";
 
   return (
     <section id="contact" className="section-padding">
@@ -46,10 +23,19 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="heading-section text-foreground"
+            className="heading-section text-foreground mb-4"
           >
             We'd Love to Hear from You
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-body-lg max-w-xl mx-auto"
+          >
+            Have questions or want to place an order? Reach out to us on WhatsApp or Instagram — we're always happy to chat!
+          </motion.p>
         </div>
 
         <motion.div
@@ -57,81 +43,56 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-5 gap-10"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto"
         >
-          {/* Info */}
-          <div className="md:col-span-2 flex flex-col gap-6 justify-center">
-            <div className="flex items-start gap-4">
-              <Mail className="w-5 h-5 text-primary mt-1 shrink-0" />
-              <div>
-                <p className="font-display text-base font-semibold text-foreground">Email</p>
-                <p className="font-body text-sm text-muted-foreground">tanvedasoaps@gmail.com</p>
-              </div>
+          {/* WhatsApp */}
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-organic flex flex-col items-center text-center gap-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <div className="w-14 h-14 rounded-full bg-[hsl(142_70%_45%/0.12)] flex items-center justify-center">
+              <MessageCircle className="w-6 h-6 text-primary" />
             </div>
-            <div className="flex items-start gap-4">
-              <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
-              <div>
-                <p className="font-display text-base font-semibold text-foreground">Location</p>
-                <p className="font-body text-sm text-muted-foreground">Handmade in India</p>
-              </div>
-            </div>
-          </div>
+            <h3 className="font-display text-lg font-semibold text-foreground">WhatsApp</h3>
+            <p className="font-body text-sm text-muted-foreground">Message us anytime</p>
+          </a>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="md:col-span-3 card-organic flex flex-col gap-5">
-            <div>
-              <label htmlFor="name" className="font-body text-sm font-medium text-foreground mb-1 block">
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                maxLength={100}
-                className="w-full rounded-xl border border-input bg-background px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                placeholder="Your name"
-              />
+          {/* Instagram */}
+          <a
+            href={`https://instagram.com/${instagramHandle}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-organic flex flex-col items-center text-center gap-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center">
+              <Instagram className="w-6 h-6 text-accent" />
             </div>
-            <div>
-              <label htmlFor="email" className="font-body text-sm font-medium text-foreground mb-1 block">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={form.email}
-                onChange={handleChange}
-                maxLength={255}
-                className="w-full rounded-xl border border-input bg-background px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                placeholder="you@example.com"
-              />
+            <h3 className="font-display text-lg font-semibold text-foreground">Instagram</h3>
+            <p className="font-body text-sm text-muted-foreground">@{instagramHandle}</p>
+          </a>
+
+          {/* Email */}
+          <a
+            href="mailto:tanvedasoaps@gmail.com"
+            className="card-organic flex flex-col items-center text-center gap-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+              <Mail className="w-6 h-6 text-primary" />
             </div>
-            <div>
-              <label htmlFor="message" className="font-body text-sm font-medium text-foreground mb-1 block">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                maxLength={1000}
-                rows={4}
-                className="w-full rounded-xl border border-input bg-background px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
-                placeholder="Tell us what you're looking for…"
-              />
+            <h3 className="font-display text-lg font-semibold text-foreground">Email</h3>
+            <p className="font-body text-sm text-muted-foreground">tanvedasoaps@gmail.com</p>
+          </a>
+
+          {/* Location */}
+          <div className="card-organic flex flex-col items-center text-center gap-3">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+              <MapPin className="w-6 h-6 text-primary" />
             </div>
-            <button
-              type="submit"
-              disabled={sending}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground font-body font-medium px-8 py-3 text-sm tracking-wide hover:opacity-90 transition-opacity disabled:opacity-60"
-            >
-              <Send className="w-4 h-4" />
-              {sending ? "Sending…" : "Send Message"}
-            </button>
-          </form>
+            <h3 className="font-display text-lg font-semibold text-foreground">Location</h3>
+            <p className="font-body text-sm text-muted-foreground">Handmade in India</p>
+          </div>
         </motion.div>
       </div>
     </section>
