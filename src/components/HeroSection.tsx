@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-soap.jpg";
-import logo from "@/assets/tanveda-logo.jpeg";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center section-padding pt-28" style={{ background: "var(--gradient-hero)" }}>
@@ -10,14 +9,6 @@ const HeroSection = () => (
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.img
-          src={logo}
-          alt="Tanveda logo"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="w-24 h-24 rounded-2xl object-cover mb-6 shadow-lg"
-        />
         <span className="inline-block font-body text-sm tracking-[0.25em] uppercase text-accent mb-4">
           Handcrafted &bull; Organic &bull; Herbal
         </span>
