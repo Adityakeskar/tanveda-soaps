@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
-  const whatsappNumber = "919XXXXXXXXX"; // Replace with actual number
+  const whatsappNumber = "918087408524";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
-  const instagramHandle = "tanvedasoaps";
+  const instagramHandle = "tanveda";
 
   return (
     <section id="contact" className="section-padding">
