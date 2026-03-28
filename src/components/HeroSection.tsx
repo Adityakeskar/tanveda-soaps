@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-soap.jpg";
-import logo from "@/assets/tanveda-logo.jpeg";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center section-padding pt-28" style={{ background: "var(--gradient-hero)" }}>
