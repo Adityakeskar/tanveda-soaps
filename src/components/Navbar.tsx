@@ -22,7 +22,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
         <a href="#" className="flex items-center gap-3">
-          <img src={logo} alt="Tanveda logo" className="h-12 w-12 rounded-full object-cover" />
+          <img src={logo} alt="Tanveda logo" className="h-14 w-14 rounded-full object-cover brightness-90 contrast-110" />
           <div className="hidden sm:block">
             <span className="font-display text-xl font-bold text-foreground tracking-wide block leading-tight">Tanveda</span>
             <span className="font-body text-[10px] tracking-[0.15em] uppercase text-muted-foreground">Pure care, everyday.</span>
