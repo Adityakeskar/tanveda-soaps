@@ -5,7 +5,7 @@ import soap3 from "@/assets/soap-3.jpg";
 
 const products = [
   { img: soap1, name: "Sandal Bloom", desc: "A rose-inspired soap enriched with floral notes for everyday freshness." },
-  { img: soap2, name: "Sandal Bloom", desc: "A sandalwood-infused soap enriched with traditional ubtan for everyday care." },
+  { img: soap2, name: "Roselia", desc: "A sandalwood-infused soap enriched with traditional ubtan for everyday care." },
   { img: soap3, name: "Gandhamala", desc: "Refreshing aroma of Lemon and Tea Tree that awakens your senses." },
 ];
 
