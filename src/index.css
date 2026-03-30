@@ -6,33 +6,34 @@
 
 @layer base {
   :root {
-    --background: 40 33% 96%;
-    --foreground: 30 10% 15%;
+    /* Warm earthy tones inspired by the Tanveda logo */
+    --background: 33 35% 88%;
+    --foreground: 30 15% 12%;
 
-    --card: 40 30% 98%;
-    --card-foreground: 30 10% 15%;
+    --card: 35 30% 92%;
+    --card-foreground: 30 15% 12%;
 
-    --popover: 40 30% 98%;
-    --popover-foreground: 30 10% 15%;
+    --popover: 35 30% 92%;
+    --popover-foreground: 30 15% 12%;
 
-    --primary: 142 25% 36%;
+    --primary: 142 25% 32%;
     --primary-foreground: 40 33% 96%;
 
-    --secondary: 30 30% 90%;
-    --secondary-foreground: 30 10% 25%;
+    --secondary: 30 25% 82%;
+    --secondary-foreground: 30 15% 18%;
 
-    --muted: 35 20% 92%;
-    --muted-foreground: 30 8% 50%;
+    --muted: 32 22% 85%;
+    --muted-foreground: 30 10% 42%;
 
-    --accent: 16 50% 55%;
+    --accent: 16 50% 50%;
     --accent-foreground: 40 33% 96%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 142 25% 36%;
+    --border: 33 18% 78%;
+    --input: 33 18% 78%;
+    --ring: 142 25% 32%;
 
     --radius: 0.75rem;
 
@@ -48,9 +49,9 @@
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'Lato', 'Helvetica Neue', sans-serif;
 
-    --gradient-hero: linear-gradient(135deg, hsl(142 25% 36% / 0.08), hsl(40 33% 96%), hsl(16 50% 55% / 0.06));
-    --shadow-soft: 0 4px 24px -4px hsl(30 10% 15% / 0.08);
-    --shadow-card: 0 8px 32px -8px hsl(30 10% 15% / 0.1);
+    --gradient-hero: linear-gradient(160deg, hsl(33 35% 88%), hsl(30 30% 84%), hsl(33 35% 88%));
+    --shadow-soft: 0 4px 24px -4px hsl(30 15% 12% / 0.06);
+    --shadow-card: 0 8px 32px -8px hsl(30 15% 12% / 0.08);
   }
 }
 
@@ -87,12 +88,6 @@
   .text-body-lg {
     @apply text-lg md:text-xl leading-relaxed;
     color: hsl(var(--muted-foreground));
-  }
-
-  .card-organic {
-    @apply rounded-2xl border border-border p-6 md:p-8;
-    background: hsl(var(--card));
-    box-shadow: var(--shadow-card);
   }
 }
 

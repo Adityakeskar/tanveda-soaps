@@ -9,8 +9,10 @@ const benefits = [
 ];
 
 const BenefitsSection = () => (
-  <section id="benefits" className="section-padding bg-secondary">
-    <div className="max-w-5xl mx-auto">
+  <section id="benefits" className="section-padding relative overflow-hidden">
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+
+    <div className="max-w-5xl mx-auto relative z-10">
       <div className="text-center mb-14">
         <motion.p
           initial={{ opacity: 0 }}
@@ -31,22 +33,25 @@ const BenefitsSection = () => (
         </motion.h2>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 gap-8">
         {benefits.map((b, i) => (
           <motion.div
             key={b.title}
-            initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="flex gap-5 items-start card-organic"
+            className="group relative"
           >
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-              <b.icon className="w-5 h-5 text-primary" />
-            </div>
-            <div>
-              <h3 className="font-display text-lg font-semibold text-foreground mb-1">{b.title}</h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+            <div className="absolute inset-0 rounded-3xl bg-card/80 backdrop-blur-sm border border-border/50 group-hover:border-primary/20 transition-colors duration-300" />
+            <div className="relative flex gap-5 items-start p-6 md:p-8">
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
+                <b.icon className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-semibold text-foreground mb-1">{b.title}</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+              </div>
             </div>
           </motion.div>
         ))}

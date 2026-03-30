@@ -2,8 +2,14 @@ import { motion } from "framer-motion";
 import heroImg from "@/assets/hero-soap.jpg";
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center section-padding pt-28" style={{ background: "var(--gradient-hero)" }}>
-    <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+  <section className="relative min-h-screen flex items-center section-padding pt-24 overflow-hidden">
+    {/* Organic background shapes */}
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
+      <div className="absolute bottom-0 -left-20 w-80 h-80 rounded-full bg-accent/5 blur-3xl" />
+    </div>
+
+    <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
@@ -41,7 +47,7 @@ const HeroSection = () => (
         transition={{ duration: 0.8, delay: 0.2 }}
         className="relative"
       >
-        <div className="rounded-3xl overflow-hidden shadow-2xl">
+        <div className="rounded-[2rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
           <img
             src={heroImg}
             alt="Tanveda handcrafted organic soaps"
