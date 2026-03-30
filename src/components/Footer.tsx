@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="bg-foreground text-primary-foreground section-padding py-12">
+  <footer className="bg-foreground text-primary-foreground px-6 py-10 md:px-12">
     <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <div>
         <p className="font-display text-xl font-bold tracking-wide">Tanveda</p>

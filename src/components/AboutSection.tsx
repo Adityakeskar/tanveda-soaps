@@ -7,18 +7,12 @@ const features = [
   { icon: Sparkles, title: "Handcrafted", desc: "Each bar is lovingly hand-poured in small batches to ensure the highest quality." },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.15 },
-  }),
-};
-
 const AboutSection = () => (
-  <section id="about" className="section-padding bg-secondary">
-    <div className="max-w-5xl mx-auto text-center">
+  <section id="about" className="section-padding relative overflow-hidden">
+    {/* Decorative wave divider */}
+    <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
+
+    <div className="max-w-5xl mx-auto text-center relative z-10">
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -46,22 +40,24 @@ const AboutSection = () => (
         Born from a passion for pure, chemical-free skincare, Tanveda is a homemade soap brand that blends ancient herbal wisdom with modern craftsmanship. Every bar tells a story of nature's healing touch.
       </motion.p>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-10">
         {features.map((f, i) => (
           <motion.div
             key={f.title}
-            custom={i}
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card-organic flex flex-col items-center text-center"
+            transition={{ duration: 0.6, delay: i * 0.15 }}
+            className="relative group"
           >
-            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-5">
-              <f.icon className="w-6 h-6 text-primary" />
+            <div className="absolute inset-0 rounded-3xl bg-primary/5 scale-95 group-hover:scale-100 transition-transform duration-300" />
+            <div className="relative p-8 flex flex-col items-center text-center">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                <f.icon className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="font-display text-xl font-semibold text-foreground mb-2">{f.title}</h3>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
             </div>
-            <h3 className="font-display text-xl font-semibold text-foreground mb-2">{f.title}</h3>
-            <p className="font-body text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
           </motion.div>
         ))}
       </div>
