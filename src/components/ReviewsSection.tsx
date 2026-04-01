@@ -24,13 +24,9 @@ const reviews = [
   },
 ];
 
-// Duplicate for seamless loop
-const duplicated = [...reviews, ...reviews];
-
 const ReviewCard = ({ r }: { r: typeof reviews[0] }) => (
-  <div className="relative group flex-shrink-0 w-[300px] sm:w-[340px]">
-    <div className="absolute inset-0 rounded-3xl bg-card/60 backdrop-blur-sm border border-border/50" />
-    <div className="relative p-6 md:p-8">
+  <div className="flex-shrink-0 w-[300px] sm:w-[340px]">
+    <div className="rounded-3xl bg-card/60 backdrop-blur-sm border border-border/50 p-6 md:p-8 h-full">
       <div className="flex gap-1 mb-4">
         {Array.from({ length: 5 }).map((_, si) => (
           <Star
@@ -47,8 +43,6 @@ const ReviewCard = ({ r }: { r: typeof reviews[0] }) => (
 
 const ReviewsSection = () => (
   <section id="reviews" className="section-padding relative overflow-hidden">
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-accent/3 blur-3xl pointer-events-none" />
-
     <div className="relative z-10">
       <div className="text-center mb-14">
         <motion.p
@@ -70,23 +64,12 @@ const ReviewsSection = () => (
         </motion.h2>
       </div>
 
-      <div className="overflow-hidden">
-        <motion.div
-          className="flex gap-8"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 20,
-              ease: "linear",
-            },
-          }}
-        >
-          {duplicated.map((r, i) => (
+      <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-accent/30 scrollbar-track-transparent">
+        <div className="flex gap-6 px-4 min-w-max">
+          {reviews.map((r, i) => (
             <ReviewCard key={`${r.name}-${i}`} r={r} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   </section>
