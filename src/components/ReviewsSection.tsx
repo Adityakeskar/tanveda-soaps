@@ -64,7 +64,7 @@ const ReviewsSection = () => (
         </motion.h2>
       </div>
 
-      <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-accent/30 scrollbar-track-transparent">
+      <div className="overflow-x-auto pb-4 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         <div className="flex gap-6 px-4 min-w-max">
           {reviews.map((r, i) => (
             <ReviewCard key={`${r.name}-${i}`} r={r} />
