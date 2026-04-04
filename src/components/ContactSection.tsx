@@ -90,18 +90,18 @@ const ContactSection = () => {
             </div>
           </a>
 
-          <div className="group relative rounded-3xl overflow-hidden">
+          {/* <div className="group relative rounded-3xl overflow-hidden">
             <div className="absolute inset-0 bg-card/60 backdrop-blur-sm border border-border/50 rounded-3xl" />
             <div className="relative flex flex-col items-center text-center gap-3 p-6 md:p-8">
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
                 <MapPin className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-display text-lg font-semibold text-foreground">Location</h3>
-              <p className="font-body text-sm text-muted-foreground">Handmade in India</p>
+              <p className="font-body text-sm text-muted-foreground">Pune, India</p>
             </div>
           </div>
         </motion.div>
-      </div>
+      </div> */}
     </section>
   );
 };
