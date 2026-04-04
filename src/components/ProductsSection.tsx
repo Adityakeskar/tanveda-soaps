@@ -49,9 +49,9 @@ const products = [
   },
   {
     id: 6,
-    img: charcoalBurst,
-    name: "Charcoal Burst",
-    desc: "Deep-cleansing activated charcoal soap that detoxifies and revitalises your skin.",
+    img: blueMusk,
+    name: "Blue Musk",
+    desc: "A refreshing musk-infused soap with a cool blue essence for an invigorating cleanse.",
     ingredients: "Coming soon",
     weight: "100g",
   },
