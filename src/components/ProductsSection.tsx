@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import sandalBloom from "@/assets/product-sandal-bloom.jpeg";
 import roselia from "@/assets/product-roselia.jpeg";
 import gandhamala from "@/assets/product-gandhamala.jpeg";
-import aloCalm from "@/assets/soap-1.jpg";
-import lemoPure from "@/assets/label-lemon.jpeg";
-import charcoalBurst from "@/assets/soap-3.jpg";
+import aloCalm from "@/assets/product-aloecalm.jpeg";
+import lemoPure from "@/assets/product-lemopure.jpeg";
+import blueMusk from "@/assets/product-bluemusk.jpeg";
 
 const products = [
   {
@@ -49,9 +49,9 @@ const products = [
   },
   {
     id: 6,
-    img: charcoalBurst,
-    name: "Charcoal Burst",
-    desc: "Deep-cleansing activated charcoal soap that detoxifies and revitalises your skin.",
+    img: blueMusk,
+    name: "Blue Musk",
+    desc: "A refreshing musk-infused soap with a cool blue essence for an invigorating cleanse.",
     ingredients: "Coming soon",
     weight: "100g",
   },
