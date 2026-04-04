@@ -1,31 +1,58 @@
 import { motion } from "framer-motion";
-import soap1 from "@/assets/soap-1.jpg";
-import soap2 from "@/assets/soap-2.jpg";
-import soap3 from "@/assets/soap-3.jpg";
+import sandalBloom from "@/assets/product-sandal-bloom.jpeg";
+import roselia from "@/assets/product-roselia.jpeg";
+import gandhamala from "@/assets/product-gandhamala.jpeg";
+import aloCalm from "@/assets/soap-1.jpg";
+import lemoPure from "@/assets/label-lemon.jpeg";
+import charcoalBurst from "@/assets/soap-3.jpg";
 
 const products = [
   {
-    img: soap1,
+    id: 1,
+    img: sandalBloom,
     name: "Sandal Bloom",
     desc: "A sandalwood-infused soap enriched with traditional ubtan for everyday care.",
     ingredients: "Coconut milk soap base, Natural ubtan, Sandalwood fragrance oil, Sandalwood essential oil, Permitted cosmetic colour",
-    
     weight: "100g",
   },
   {
-    img: soap2,
+    id: 2,
+    img: roselia,
     name: "Roselia",
     desc: "A rose-inspired soap enriched with floral notes for everyday freshness.",
     ingredients: "Coconut milk soap base, Rose fragrance oil, Permitted cosmetic colour, Rose essential oil",
-    
     weight: "100g",
   },
   {
-    img: soap3,
+    id: 3,
+    img: gandhamala,
     name: "Gandhamala",
     desc: "Refreshing aroma of Lemon and Tea Tree that awakens your senses.",
     ingredients: "Lemon zest, Tea tree oil, Neem extract, Aloe vera, Coconut oil",
-    
+    weight: "100g",
+  },
+  {
+    id: 4,
+    img: aloCalm,
+    name: "Aloe Calm",
+    desc: "A soothing blend of aloe vera and lavender that calms your skin and mind.",
+    ingredients: "Glycerin soap base, Aloe vera extract, Lavender fragrance oil, Tea tree essential oil, Vegetable glycerine",
+    weight: "100g",
+  },
+  {
+    id: 5,
+    img: lemoPure,
+    name: "Lemo Pure",
+    desc: "A zesty citrus cleanse powered by lemon and tea tree for a refreshing glow.",
+    ingredients: "Glycerin soap base, Lemon fragrance oil, Tea tree essential oil, Vegetable glycerine",
+    weight: "100g",
+  },
+  {
+    id: 6,
+    img: charcoalBurst,
+    name: "Charcoal Burst",
+    desc: "Deep-cleansing activated charcoal soap that detoxifies and revitalises your skin.",
+    ingredients: "Coming soon",
     weight: "100g",
   },
 ];
@@ -56,57 +83,57 @@ const ProductsSection = () => (
         </motion.h2>
       </div>
 
-      <div className="space-y-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((p, i) => (
           <motion.div
-            key={p.name}
-            initial={{ opacity: 0, y: 50 }}
+            key={p.id}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-10 md:gap-16`}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="group relative rounded-2xl bg-card/50 backdrop-blur-sm p-4 hover:shadow-xl transition-all duration-500"
           >
-            {/* Image */}
-            <div className="w-full md:w-1/2 relative group">
-              <div className={`absolute inset-4 rounded-3xl bg-primary/10 ${i % 2 === 0 ? 'rotate-3' : '-rotate-3'} transition-transform group-hover:rotate-0 duration-500`} />
-              <div className="relative rounded-3xl overflow-hidden shadow-xl">
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  loading="lazy"
-                  width={640}
-                  height={640}
-                  className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+            <div className="relative rounded-xl overflow-hidden mb-5">
+              <img
+                src={p.img}
+                alt={p.name}
+                loading="lazy"
+                width={400}
+                height={400}
+                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
 
-            {/* Details */}
-            <div className="w-full md:w-1/2 space-y-4">
-              <h3 className="font-display text-3xl font-semibold text-foreground">{p.name}</h3>
-              <p className="font-body text-base text-muted-foreground leading-relaxed">{p.desc}</p>
+            <h3 className="font-display text-xl font-semibold text-foreground mb-1">{p.name}</h3>
+            <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
 
-              <div className="space-y-3 pt-2">
-                <div className="flex items-start gap-3">
-                  <span className="font-body text-xs tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0 w-24">Ingredients</span>
-                  <span className="font-body text-sm text-muted-foreground">{p.ingredients}</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="font-body text-xs tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0 w-24">Weight</span>
-                  <span className="font-body text-sm text-muted-foreground">{p.weight}</span>
-                </div>
+            <div className="space-y-2">
+              <div className="flex items-start gap-2">
+                <span className="font-body text-[10px] tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0">Ingredients</span>
+                <span className="font-body text-xs text-muted-foreground">{p.ingredients}</span>
               </div>
-
-              <a
-                href="#contact"
-                className="inline-flex items-center mt-4 font-body text-sm font-medium text-primary hover:text-accent transition-colors tracking-wide"
-              >
-                Enquire Now →
-              </a>
+              <div className="flex items-start gap-2">
+                <span className="font-body text-[10px] tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0">Weight</span>
+                <span className="font-body text-xs text-muted-foreground">{p.weight}</span>
+              </div>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Directions to Use */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mt-20 text-center max-w-xl mx-auto"
+      >
+        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Directions to Use</h3>
+        <p className="font-body text-sm text-muted-foreground italic leading-relaxed">
+          "Until and unless you are a toddler, you know how to use it. If you are, your mom knows everything — listen to her ;)"
+        </p>
+      </motion.div>
     </div>
   </section>
 );
