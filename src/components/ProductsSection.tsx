@@ -14,13 +14,15 @@ const products = [
     desc: "A sandalwood-infused soap enriched with traditional ubtan for everyday care.",
     ingredients: "Sandalwood, Ubtan, Ayurvedic",
     weight: "100g",
+    categories: ["Mature", "Dull", "All Types"],
   },
   {
     id: 2,
     img: roselia,
     name: "Roselia",
     desc: "A rose-inspired soap enriched with floral notes for everyday freshness.",
-    ingredients: "Rose, Coconut milk, Floral ",
+    ingredients: "Rose, Coconut milk, Floral",
+    categories: ["Dry", "Normal"],
     weight: "100g",
   },
   {
@@ -30,6 +32,7 @@ const products = [
     desc: "Refreshing aroma of Lemon and Tea Tree that awakens your senses.",
     ingredients: "Lavender, Bouquet, Floral",
     weight: "100g",
+    categories: ["Normal", "Combination"],
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ const products = [
     desc: "A soothing blend of aloe vera and lavender that calms your skin and mind.",
     ingredients: "Aloe vera, Lavender, Tea Tree",
     weight: "100g",
+    categories: ["Sensitive", "Combination"],
   },
   {
     id: 5,
@@ -46,6 +50,7 @@ const products = [
     desc: "A zesty citrus cleanse powered by lemon and tea tree for a refreshing glow.",
     ingredients: "Lemon, Tea tree, Refreshing",
     weight: "100g",
+    categories: ["Oily", "Acne-prone"],
   },
   {
     id: 6,
@@ -54,6 +59,7 @@ const products = [
     desc: "A refreshing musk-infused soap with a cool blue essence for an invigorating cleanse.",
     ingredients: "Blue Musk, Rosemary, Refreshing",
     weight: "100g",
+    categories: ["Mature", "Dull", "All Types"],
   },
 ];
 
@@ -94,6 +100,13 @@ const ProductsSection = () => (
             className="group relative rounded-2xl bg-card/50 backdrop-blur-sm p-4 hover:shadow-xl transition-all duration-500"
           >
             <div className="relative rounded-xl overflow-hidden mb-5">
+              <div className="absolute top-2 left-2 z-10 flex flex-wrap gap-1">
+                {p.categories.map((cat, idx) => (
+                  <span key={idx} className="font-body text-[9px] font-medium tracking-wide px-2 py-0.5 rounded-full bg-primary/80 text-primary-foreground backdrop-blur-sm">
+                    {cat}
+                  </span>
+                ))}
+              </div>
               <img
                 src={p.img}
                 alt={p.name}
