@@ -18,7 +18,7 @@ const JourneySection = () => (
         <span className="text-foreground font-semibold not-italic">handcrafted</span> with love, blending age-old
         Ayurvedic wisdom with a dash of modern charm. Because your skin deserves more than just a wash, it deserves a
         little ritual, a moment of joy, a touch of{" "}
-        <span className="text-foreground font-semibold not-italic">nature</span>. That's the Tanveda journey — and we're
+        <span className="text-foreground font-semibold not-italic">nature</span>. That's the Tanveda journey, and we're
         just getting started! 🌿
       </p>
     </motion.div>
