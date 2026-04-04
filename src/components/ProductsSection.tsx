@@ -121,19 +121,17 @@ const ProductsSection = () => (
         ))}
       </div>
 
-      {/* Directions to Use */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mt-20 text-center max-w-xl mx-auto"
-      >
-        <h3 className="font-display text-lg font-semibold text-foreground mb-2">Directions to Use</h3>
-        <p className="font-body text-sm text-muted-foreground italic leading-relaxed">
-          "Until and unless you are a toddler, you know how to use it. If you are, your mom knows everything — listen to her ;)"
-        </p>
-      </motion.div>
+      {/* Directions to Use - compact rotating banner */}
+      <div className="mt-12 overflow-hidden relative">
+        <div className="flex items-center gap-8 animate-[scroll_20s_linear_infinite] whitespace-nowrap">
+          {[...Array(4)].map((_, i) => (
+            <span key={i} className="inline-flex items-center gap-3 font-body text-sm text-muted-foreground italic">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent/40 shrink-0" />
+              Directions to Use: "Until and unless you are a toddler, you know how to use it. If you are, your mom knows everything — listen to her ;)"
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 );
