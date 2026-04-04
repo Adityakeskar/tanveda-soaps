@@ -25,7 +25,7 @@ const products = [
     name: "Gandhamala",
     desc: "Refreshing aroma of Lemon and Tea Tree that awakens your senses.",
     ingredients: "Lemon zest, Tea tree oil, Neem extract, Aloe vera, Coconut oil",
-    benefits: "Antibacterial, refreshing, oil control",
+    
     weight: "100g",
   },
 ];
