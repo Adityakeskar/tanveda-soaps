@@ -92,10 +92,6 @@ const ProductsSection = () => (
                   <span className="font-body text-sm text-muted-foreground">{p.ingredients}</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="font-body text-xs tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0 w-24">Benefits</span>
-                  <span className="font-body text-sm text-muted-foreground">{p.benefits}</span>
-                </div>
-                <div className="flex items-start gap-3">
                   <span className="font-body text-xs tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0 w-24">Weight</span>
                   <span className="font-body text-sm text-muted-foreground">{p.weight}</span>
                 </div>
