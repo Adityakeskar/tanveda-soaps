@@ -9,7 +9,7 @@ const products = [
     name: "Sandal Bloom",
     desc: "A sandalwood-infused soap enriched with traditional ubtan for everyday care.",
     ingredients: "Coconut milk soap base, Natural ubtan, Sandalwood fragrance oil, Sandalwood essential oil, Permitted cosmetic colour",
-    benefits: "Brightens skin, evens tone, deep moisturizing",
+    
     weight: "100g",
   },
   {
@@ -17,7 +17,7 @@ const products = [
     name: "Roselia",
     desc: "A rose-inspired soap enriched with floral notes for everyday freshness.",
     ingredients: "Coconut milk soap base, Rose fragrance oil, Permitted cosmetic colour, Rose essential oil",
-    benefits: "Hydrates skin, calming fragrance, anti-aging",
+    
     weight: "100g",
   },
   {
@@ -25,7 +25,7 @@ const products = [
     name: "Gandhamala",
     desc: "Refreshing aroma of Lemon and Tea Tree that awakens your senses.",
     ingredients: "Lemon zest, Tea tree oil, Neem extract, Aloe vera, Coconut oil",
-    benefits: "Antibacterial, refreshing, oil control",
+    
     weight: "100g",
   },
 ];
@@ -90,10 +90,6 @@ const ProductsSection = () => (
                 <div className="flex items-start gap-3">
                   <span className="font-body text-xs tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0 w-24">Ingredients</span>
                   <span className="font-body text-sm text-muted-foreground">{p.ingredients}</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="font-body text-xs tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0 w-24">Benefits</span>
-                  <span className="font-body text-sm text-muted-foreground">{p.benefits}</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="font-body text-xs tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0 w-24">Weight</span>
