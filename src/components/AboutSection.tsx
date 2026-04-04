@@ -35,9 +35,27 @@ const AboutSection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-body-lg max-w-2xl mx-auto mb-14"
+        className="text-body-lg max-w-2xl mx-auto mb-8"
       >
         Born from a passion for pure, chemical-free skincare, Tanveda is a homemade soap brand that blends ancient herbal wisdom with modern craftsmanship. Every bar tells a story of nature's healing touch.
+      </motion.p>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        className="font-body text-base md:text-lg text-muted-foreground leading-relaxed italic max-w-2xl mx-auto mb-14"
+      >
+        It all started with a simple thought, what if{" "}
+        <span className="text-foreground font-semibold not-italic">self care</span> could be truly pure? No chemicals,
+        no shortcuts. Just honest, <span className="text-foreground font-semibold not-italic">organic</span> goodness
+        shaped by hand. Every bar of Tanveda soap is{" "}
+        <span className="text-foreground font-semibold not-italic">handcrafted</span> with love, blending age-old
+        Ayurvedic wisdom with a dash of modern charm. Because your skin deserves more than just a wash, it deserves a
+        little ritual, a moment of joy, a touch of{" "}
+        <span className="text-foreground font-semibold not-italic">nature</span>. That's the Tanveda journey, and we're
+        just getting started! 🌿
       </motion.p>
 
       <div className="grid md:grid-cols-3 gap-10">
