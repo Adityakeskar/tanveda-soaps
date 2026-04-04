@@ -9,8 +9,8 @@ const benefits = [
 ];
 
 const BenefitsSection = () => (
-  <section id="benefits" className="section-padding relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+  <section id="benefits" className="section-padding relative overflow-hidden" style={{ backgroundColor: '#2D4A2D' }}>
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 pointer-events-none" />
 
     <div className="max-w-6xl mx-auto relative z-10">
       <div className="text-center mb-14">
