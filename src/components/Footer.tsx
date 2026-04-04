@@ -1,5 +1,5 @@
 import { MessageCircle, Instagram, Mail } from "lucide-react";
-
+import ayushLogo from "@/assets/ayush-certified.jpg";
 const Footer = () => {
   const whatsappLink = `https://api.whatsapp.com/send?phone=918087408524&text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
 
@@ -39,9 +39,12 @@ const Footer = () => {
           </a>
         </div>
 
-        <p className="font-body text-xs opacity-50">
-          &copy; {new Date().getFullYear()} Tanveda. All rights reserved.
-        </p>
+        <div className="flex items-center gap-3">
+          <img src={ayushLogo} alt="National Ayush Mission Certified" className="w-8 h-8 rounded-full object-cover opacity-80" />
+          <p className="font-body text-xs opacity-50">
+            &copy; {new Date().getFullYear()} Tanveda. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );
