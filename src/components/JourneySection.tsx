@@ -11,7 +11,7 @@ const JourneySection = () => (
       className="max-w-3xl mx-auto text-center relative z-10"
     >
       <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed italic">
-        It all started with a simple thought — what if{" "}
+        It all started with a simple thought, what if{" "}
         <span className="text-foreground font-semibold not-italic">self care</span> could be truly pure? No chemicals,
         no shortcuts. Just honest, <span className="text-foreground font-semibold not-italic">organic</span> goodness
         shaped by hand. Every bar of Tanveda soap is{" "}
