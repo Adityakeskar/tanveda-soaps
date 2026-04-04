@@ -28,7 +28,7 @@ const products = [
     img: gandhamala,
     name: "Gandhamala",
     desc: "Refreshing aroma of Lemon and Tea Tree that awakens your senses.",
-    ingredients: "Lemon zest, Tea tree oil, Neem extract, Aloe vera, Coconut oil",
+    ingredients: "Lavender, Bouquet, Floral",
     weight: "100g",
   },
   {
@@ -36,8 +36,7 @@ const products = [
     img: aloCalm,
     name: "Aloe Calm",
     desc: "A soothing blend of aloe vera and lavender that calms your skin and mind.",
-    ingredients:
-      "Glycerin soap base, Aloe vera extract, Lavender fragrance oil, Tea tree essential oil, Vegetable glycerine",
+    ingredients: "Aloe vera, Lavender, Tea Tree",
     weight: "100g",
   },
   {
@@ -45,7 +44,7 @@ const products = [
     img: lemoPure,
     name: "Lemo Pure",
     desc: "A zesty citrus cleanse powered by lemon and tea tree for a refreshing glow.",
-    ingredients: "Glycerin soap base, Lemon fragrance oil, Tea tree essential oil, Vegetable glycerine",
+    ingredients: "Lemon, Tea tree, Refreshing",
     weight: "100g",
   },
   {
@@ -53,7 +52,7 @@ const products = [
     img: blueMusk,
     name: "Blue Musk",
     desc: "A refreshing musk-infused soap with a cool blue essence for an invigorating cleanse.",
-    ingredients: "Coming soon",
+    ingredients: "Blue Musk, Rosemary, Refreshing",
     weight: "100g",
   },
 ];
