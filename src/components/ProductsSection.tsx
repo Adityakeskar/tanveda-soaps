@@ -8,7 +8,7 @@ const products = [
     img: soap1,
     name: "Sandal Bloom",
     desc: "A sandalwood-infused soap enriched with traditional ubtan for everyday care.",
-    ingredients: "Sandalwood powder, Turmeric, Gram flour, Coconut oil, Shea butter",
+    ingredients: "Coconut milk soap base, Natural ubtan, Sandalwood fragrance oil, Sandalwood essential oil, Permitted cosmetic colour",
     benefits: "Brightens skin, evens tone, deep moisturizing",
     weight: "100g",
   },
