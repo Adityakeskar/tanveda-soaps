@@ -100,6 +100,13 @@ const ProductsSection = () => (
             className="group relative rounded-2xl bg-card/50 backdrop-blur-sm p-4 hover:shadow-xl transition-all duration-500"
           >
             <div className="relative rounded-xl overflow-hidden mb-5">
+              <div className="absolute top-2 left-2 z-10 flex flex-wrap gap-1">
+                {p.categories.map((cat, idx) => (
+                  <span key={idx} className="font-body text-[9px] font-medium tracking-wide px-2 py-0.5 rounded-full bg-primary/80 text-primary-foreground backdrop-blur-sm">
+                    {cat}
+                  </span>
+                ))}
+              </div>
               <img
                 src={p.img}
                 alt={p.name}
