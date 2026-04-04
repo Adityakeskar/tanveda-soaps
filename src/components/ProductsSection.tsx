@@ -12,7 +12,7 @@ const products = [
     img: sandalBloom,
     name: "Sandal Bloom",
     desc: "A sandalwood-infused soap enriched with traditional ubtan for everyday care.",
-    ingredients: "Coconut milk soap base, Natural ubtan, Sandalwood fragrance oil, Sandalwood essential oil, Permitted cosmetic colour",
+    ingredients: "Sandalwood, Ubtan, Ayurvedic",
     weight: "100g",
   },
   {
@@ -20,7 +20,7 @@ const products = [
     img: roselia,
     name: "Roselia",
     desc: "A rose-inspired soap enriched with floral notes for everyday freshness.",
-    ingredients: "Coconut milk soap base, Rose fragrance oil, Permitted cosmetic colour, Rose essential oil",
+    ingredients: "Rose, Coconut milk, Floral ",
     weight: "100g",
   },
   {
@@ -36,7 +36,8 @@ const products = [
     img: aloCalm,
     name: "Aloe Calm",
     desc: "A soothing blend of aloe vera and lavender that calms your skin and mind.",
-    ingredients: "Glycerin soap base, Aloe vera extract, Lavender fragrance oil, Tea tree essential oil, Vegetable glycerine",
+    ingredients:
+      "Glycerin soap base, Aloe vera extract, Lavender fragrance oil, Tea tree essential oil, Vegetable glycerine",
     weight: "100g",
   },
   {
@@ -109,11 +110,15 @@ const ProductsSection = () => (
 
             <div className="space-y-2">
               <div className="flex items-start gap-2">
-                <span className="font-body text-[10px] tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0">Ingredients</span>
+                <span className="font-body text-[10px] tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0">
+                  Ingredients
+                </span>
                 <span className="font-body text-xs text-muted-foreground">{p.ingredients}</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="font-body text-[10px] tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0">Weight</span>
+                <span className="font-body text-[10px] tracking-[0.15em] uppercase text-accent font-bold mt-0.5 shrink-0">
+                  Weight
+                </span>
                 <span className="font-body text-xs text-muted-foreground">{p.weight}</span>
               </div>
             </div>
@@ -127,7 +132,8 @@ const ProductsSection = () => (
           {[...Array(4)].map((_, i) => (
             <span key={i} className="inline-flex items-center gap-3 font-body text-sm text-muted-foreground italic">
               <span className="w-1.5 h-1.5 rounded-full bg-accent/40 shrink-0" />
-              Directions to Use: "Until and unless you are a toddler, you know how to use it. If you are, your mom knows everything — listen to her ;)"
+              Directions to Use: "Until and unless you are a toddler, you know how to use it. If you are, your mom knows
+              everything — listen to her ;)"
             </span>
           ))}
         </div>
