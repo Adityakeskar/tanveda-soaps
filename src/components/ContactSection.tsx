@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
-  const whatsappNumber = "918087408524";
+  const whatsappNumber = "8830334433";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
   const instagramHandle = "tanveda";
 
@@ -79,10 +79,7 @@ const ContactSection = () => {
             </div>
           </a>
 
-          <a
-            href="mailto:tanvedasoaps@gmail.com"
-            className="group relative rounded-3xl overflow-hidden"
-          >
+          <a href="mailto:tanvedasoaps@gmail.com" className="group relative rounded-3xl overflow-hidden">
             <div className="absolute inset-0 bg-card/60 backdrop-blur-sm border border-border/50 rounded-3xl group-hover:border-primary/30 transition-colors" />
             <div className="relative flex flex-col items-center text-center gap-3 p-6 md:p-8">
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
