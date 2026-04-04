@@ -17,7 +17,7 @@ const products = [
     name: "Roselia",
     desc: "A rose-inspired soap enriched with floral notes for everyday freshness.",
     ingredients: "Coconut milk soap base, Rose fragrance oil, Permitted cosmetic colour, Rose essential oil",
-    benefits: "Hydrates skin, calming fragrance, anti-aging",
+    
     weight: "100g",
   },
   {
