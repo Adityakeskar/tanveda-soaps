@@ -4,7 +4,7 @@ import { MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
 const ContactSection = () => {
   const whatsappNumber = "8830334433";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
-  const instagramHandle = "tanveda";
+  const instagramHandle = "tanvedasoaps";
 
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
