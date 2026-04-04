@@ -1,5 +1,5 @@
 import { MessageCircle, Instagram, Mail } from "lucide-react";
-
+import ayushLogo from "@/assets/ayush-certified.jpg";
 const Footer = () => {
   const whatsappLink = `https://api.whatsapp.com/send?phone=918087408524&text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
 
