@@ -102,7 +102,7 @@ const ProductsSection = () => (
             <div className="relative rounded-xl overflow-hidden mb-5">
               <div className="absolute top-2 left-2 z-10 flex flex-wrap gap-1.5">
                 {p.categories.map((cat, idx) => (
-                  <span key={idx} className="font-body text-[9px] font-semibold tracking-wide px-2.5 py-1 rounded-full bg-white/90 text-accent shadow-sm border border-accent/15 backdrop-blur-md">
+                  <span key={idx} className="font-body text-[9px] font-semibold tracking-wide px-2.5 py-1 rounded-full bg-emerald-800 text-white shadow-md">
                     {cat}
                   </span>
                 ))}
