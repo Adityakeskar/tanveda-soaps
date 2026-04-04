@@ -46,12 +46,12 @@ const BenefitsSection = () => (
             {/* Organic circular icon */}
             <div className="relative mb-4">
               <div className="absolute -inset-2 rounded-full bg-primary/10 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative w-16 h-16 rounded-full bg-[#E8C97A]/15 border border-[#E8C97A]/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <b.icon className="w-7 h-7" style={{ color: '#E8C97A' }} />
+              <div className="relative w-16 h-16 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <b.icon className="w-7 h-7 text-white/90" />
               </div>
             </div>
 
-            <h3 className="font-display text-base font-semibold mb-1" style={{ color: '#E8C97A' }}>{b.title}</h3>
+            <h3 className="font-display text-base font-semibold text-white mb-1">{b.title}</h3>
             <p className="font-body text-sm text-white/70 leading-relaxed">{b.desc}</p>
           </motion.div>
         ))}
