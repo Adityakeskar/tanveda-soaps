@@ -107,7 +107,7 @@ const ProductsSection = () => (
             <h3 className="font-display text-xl font-semibold text-foreground mb-1">{p.name}</h3>
             <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
 
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1.5 mb-3">
               {p.ingredients.split(",").map((ing, idx) => (
                 <span
                   key={idx}
@@ -116,10 +116,10 @@ const ProductsSection = () => (
                   {ing.trim()}
                 </span>
               ))}
-              <span className="font-body text-[10px] tracking-wide px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-                {p.weight}
-              </span>
             </div>
+            <p className="font-body text-[10px] tracking-[0.15em] uppercase text-muted-foreground">
+              Net Wt. <span className="text-foreground font-semibold">{p.weight}</span>
+            </p>
           </motion.div>
         ))}
       </div>
