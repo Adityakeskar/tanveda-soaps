@@ -9,8 +9,8 @@ const benefits = [
 ];
 
 const BenefitsSection = () => (
-  <section id="benefits" className="section-padding relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+  <section id="benefits" className="section-padding relative overflow-hidden" style={{ backgroundColor: '#2D4A2D' }}>
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 pointer-events-none" />
 
     <div className="max-w-6xl mx-auto relative z-10">
       <div className="text-center mb-14">
@@ -18,7 +18,7 @@ const BenefitsSection = () => (
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-body text-sm tracking-[0.2em] uppercase text-accent mb-3"
+          className="font-body text-sm tracking-[0.2em] uppercase text-white/70 mb-3"
         >
           Why Tanveda
         </motion.p>
@@ -27,7 +27,7 @@ const BenefitsSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="heading-section text-foreground"
+          className="heading-section text-white"
         >
           Goodness You Can Feel
         </motion.h2>
@@ -46,13 +46,13 @@ const BenefitsSection = () => (
             {/* Organic circular icon */}
             <div className="relative mb-4">
               <div className="absolute -inset-2 rounded-full bg-primary/10 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary/15 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <b.icon className="w-7 h-7 text-primary" />
+              <div className="relative w-16 h-16 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <b.icon className="w-7 h-7 text-white/90" />
               </div>
             </div>
 
-            <h3 className="font-display text-base font-semibold text-foreground mb-1">{b.title}</h3>
-            <p className="font-body text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+            <h3 className="font-display text-base font-semibold text-white mb-1">{b.title}</h3>
+            <p className="font-body text-sm text-white/70 leading-relaxed">{b.desc}</p>
           </motion.div>
         ))}
       </div>
