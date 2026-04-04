@@ -16,7 +16,7 @@ const products = [
     img: soap2,
     name: "Roselia",
     desc: "A rose-inspired soap enriched with floral notes for everyday freshness.",
-    ingredients: "Rose petals, Rose water, Glycerin, Olive oil, Vitamin E",
+    ingredients: "Coconut milk soap base, Rose fragrance oil, Permitted cosmetic colour, Rose essential oil",
     benefits: "Hydrates skin, calming fragrance, anti-aging",
     weight: "100g",
   },
