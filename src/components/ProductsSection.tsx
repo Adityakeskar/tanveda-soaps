@@ -68,7 +68,7 @@ const products = [
 type Product = typeof products[0];
 
 const OrderModal = ({ product, onClose }: { product: Product; onClose: () => void }) => {
-  const whatsappLink = `https://api.whatsapp.com/send?phone=918087408524&text=${encodeURIComponent(`Hi Tanveda! I'd like to order ${product.name}. Please share the details.`)}`;
+  const whatsappLink = `https://api.whatsapp.com/send?phone=918830334433&text=${encodeURIComponent(`Hi Tanveda! I'd like to order ${product.name}. Please share the details.`)}`;
   const instaLink = `https://instagram.com/tanvedasoaps`;
 
   return (

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 const EnquirySection = () => {
-  const whatsappLink = `https://wa.me/918087408524?text=${encodeURIComponent("Hi Tanveda! I'd like to place an order or know more about your soaps.")}`;
+  const whatsappLink = `https://wa.me/918830334433?text=${encodeURIComponent("Hi Tanveda! I'd like to place an order or know more about your soaps.")}`;
 
   return (
     <section className="section-padding relative overflow-hidden">

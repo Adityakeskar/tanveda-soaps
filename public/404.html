@@ -3,13 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <script>
-      // GitHub Pages SPA redirect trick
-      // Redirects 404s back to index.html preserving the path
+      // GitHub Pages SPA: redirect 404s back to index.html with path as query param
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
         l.pathname.split('/').slice(0, 2).join('/') +
-        '/?p=' + l.pathname.slice(1).replace(/&/g, '~and~') +
+        '/?p=' + l.pathname.split('/').slice(2).join('/').replace(/&/g, '~and~') +
         (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
       );

@@ -2,7 +2,7 @@ import { MessageCircle, Instagram, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const whatsappLink = `https://api.whatsapp.com/send?phone=918087408524&text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
+const whatsappLink = `https://api.whatsapp.com/send?phone=918830334433&text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
 
 const FloatingContact = () => {
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);

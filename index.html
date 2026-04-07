@@ -10,24 +10,22 @@
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/jpeg" href="/tanveda-soaps/favicon.jpeg" />
     <script>
-      // GitHub Pages SPA redirect: restore URL from ?p= param
+      // GitHub Pages SPA: restore path after 404 redirect
       (function() {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
-        }
         var query = window.location.search.slice(1);
         if (query.startsWith('p=')) {
-          var path = query.split('&')[0].slice(2).replace(/~and~/g, '&');
-          history.replaceState(null, null, '/' + path + (query.slice(query.indexOf('&') + 1).startsWith('q=') ? '?' + query.split('&')[1].slice(2).replace(/~and~/g, '&') : '') + location.hash);
+          var parts = query.split('&');
+          var restored = parts[0].slice(2).replace(/~and~/g, '&');
+          var search = parts[1] && parts[1].startsWith('q=') ? '?' + parts[1].slice(2).replace(/~and~/g, '&') : '';
+          var base = '/tanveda-soaps';
+          history.replaceState(null, null, base + (restored ? '/' + restored : '/') + search + location.hash);
         }
       })();
     </script>
-    <link rel="canonical" href="https://tanvedasoaps.lovable.app/" />
+    <link rel="canonical" href="https://adityakeskar.github.io/tanveda-soaps/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tanvedasoaps.lovable.app/" />
+    <meta property="og:url" content="https://adityakeskar.github.io/tanveda-soaps/" />
     <meta property="og:title" content="Tanveda — Handcrafted Organic Soaps | Pure Herbal Bathing Bars">
     <meta property="og:description" content="Discover Tanveda's range of handcrafted, organic soaps made from Ayurvedic herbs and natural ingredients. Gentle care for every skin type.">
     <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/813af21a-5b06-48c9-842b-e5535e974f14/id-preview-4a3f5213--fa671cf3-55cf-4292-a43e-788b53d59441.lovable.app-1774681424311.png">

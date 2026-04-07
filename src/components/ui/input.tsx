@@ -1,4 +1,5 @@
-import * as React from "react";
+GET https://adityakeskar.github.io/src/main.tsx net::ERR_ABORTED 404 (Not Found)Understand this error
+favicon.jpeg:1  GET https://adityakeskar.github.io/favicon.jpeg 404 (Not Found)Understand this errorimport * as React from "react";
 
 import { cn } from "@/lib/utils";
 

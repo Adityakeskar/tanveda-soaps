@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ayushLogo from "@/assets/ayush-certified.jpg";
 
-const whatsappLink = `https://api.whatsapp.com/send?phone=918087408524&text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
+const whatsappLink = `https://api.whatsapp.com/send?phone=918830334433&text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
 
 const quickLinks = [
   { label: "About", href: "#about" },
