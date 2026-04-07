@@ -42,7 +42,7 @@ const ReviewCard = ({ r }: { r: typeof reviews[0] }) => (
 );
 
 const ReviewsSection = () => (
-  <section id="reviews" className="section-padding relative overflow-hidden">
+  <section id="reviews" className="section-padding relative overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(35 30% 92%), hsl(40 35% 90%), hsl(33 28% 88%))' }}>
     <div className="relative z-10">
       <div className="text-center mb-14">
         <motion.p
