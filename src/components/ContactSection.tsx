@@ -1,14 +1,10 @@
 import { motion } from "framer-motion";
 import { MessageSquare, ArrowRight } from "lucide-react";
-import waterDropletsBg from "@/assets/water-droplets-light.jpg";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={waterDropletsBg} alt="" loading="lazy" width={1920} height={1080} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[hsl(142_30%_12%/0.7)]" />
-      </div>
+    <section id="contact" className="section-padding relative overflow-hidden" style={{ background: 'linear-gradient(160deg, hsl(142 20% 18%), hsl(150 18% 22%), hsl(140 22% 16%))' }}>
+      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-2xl mx-auto relative z-10 text-center">
         <motion.p

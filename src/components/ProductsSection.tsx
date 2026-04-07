@@ -76,7 +76,7 @@ const ProductsSection = () => (
         height={1080}
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-[hsl(142_30%_12%/0.65)]" />
+      <div className="absolute inset-0 bg-[hsl(142_30%_12%/0.82)]" />
     </div>
 
     <div className="section-padding relative z-10">
