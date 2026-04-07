@@ -20,7 +20,7 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="heading-section text-foreground mb-4"
+          className="heading-section text-white mb-4"
         >
           We'd Love to Hear from You
         </motion.h2>
