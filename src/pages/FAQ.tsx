@@ -28,10 +28,6 @@ const faqs = [
     a: "Our soaps have a shelf life of approximately 12 months from the date of manufacture when stored properly.",
   },
   {
-    q: "Can I use these soaps for babies or toddlers?",
-    a: "Our soaps are gentle, but we recommend consulting a paediatrician before using any new product on infants. Aloe Calm is our gentlest option.",
-  },
-  {
     q: "How can I place a bulk order?",
     a: "For bulk or corporate orders, please contact us directly via WhatsApp or email at tanvedasoaps@gmail.com.",
   },

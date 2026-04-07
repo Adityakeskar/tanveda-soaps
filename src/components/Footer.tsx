@@ -1,5 +1,6 @@
 import { MessageCircle, Instagram, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import ayushLogo from "@/assets/ayush-certified.jpg";
 
 const whatsappLink = `https://api.whatsapp.com/send?phone=918087408524&text=${encodeURIComponent("Hi Tanveda! I'd like to know more about your soaps.")}`;
@@ -13,10 +14,35 @@ const quickLinks = [
 ];
 
 const Footer = () => {
+  const [contactBubble, setContactBubble] = useState(false);
+
+  useEffect(() => {
+    let timer: number;
+
+    const showBubble = () => {
+      setContactBubble(true);
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        setContactBubble(false);
+      }, 20000);
+    };
+
+    window.addEventListener("contact-highlight", showBubble);
+    return () => {
+      window.removeEventListener("contact-highlight", showBubble);
+      window.clearTimeout(timer);
+    };
+  }, []);
+
+  const iconBaseClass = "w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center transition-colors hover:bg-primary-foreground/20";
+
   const handleScrollLink = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (href === "#contact") {
+      window.dispatchEvent(new Event("contact-highlight"));
+    }
   };
 
   return (
@@ -27,13 +53,13 @@ const Footer = () => {
           <p className="font-display text-xl font-bold tracking-wide">Tanveda</p>
           <p className="font-body text-xs opacity-60 mt-1 mb-4">Pure care, everyday.</p>
           <div className="flex items-center gap-3">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors" aria-label="WhatsApp">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={iconBaseClass} aria-label="WhatsApp">
               <MessageCircle className="w-4 h-4" />
             </a>
-            <a href="https://instagram.com/tanveda" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors" aria-label="Instagram">
+            <a href="https://instagram.com/tanvedasoaps" target="_blank" rel="noopener noreferrer" className={iconBaseClass} aria-label="Instagram">
               <Instagram className="w-4 h-4" />
             </a>
-            <a href="mailto:tanvedasoaps@gmail.com" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors" aria-label="Email">
+            <a href="mailto:tanvedasoaps@gmail.com" className={iconBaseClass} aria-label="Email">
               <Mail className="w-4 h-4" />
             </a>
           </div>
@@ -61,10 +87,6 @@ const Footer = () => {
             <li><Link to="/terms-and-conditions" className="font-body text-sm opacity-60 hover:opacity-100 transition-opacity">Terms & Conditions</Link></li>
             <li><Link to="/faq" className="font-body text-sm opacity-60 hover:opacity-100 transition-opacity">FAQ</Link></li>
           </ul>
-          <div className="flex items-center gap-3 mt-5">
-            <img src={ayushLogo} alt="National Ayush Mission Certified" className="w-8 h-8 rounded-full object-cover opacity-80" />
-            <p className="font-body text-[10px] opacity-50">Ayush Certified</p>
-          </div>
         </div>
       </div>
 

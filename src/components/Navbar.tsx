@@ -8,7 +8,7 @@ const links = [
   { label: "Products", href: "#products" },
   { label: "Benefits", href: "#benefits" },
   { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
+  { label: "Feedback", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -17,10 +17,16 @@ const Navbar = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    const targetId = href.slice(1);
+    window.setTimeout(() => {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      if (href === "#contact") {
+        window.dispatchEvent(new Event("contact-highlight"));
+      }
+    }, 180);
   };
 
   return (

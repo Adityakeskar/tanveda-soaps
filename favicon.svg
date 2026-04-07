@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="64" fill="hsl(36 52% 92%)"/>
+  
+  <!-- Outer glow -->
+  <circle cx="64" cy="64" r="62" fill="none" stroke="hsl(150 25% 28%)" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Lotus petals - green -->
+  <g fill="hsl(150 25% 28%)">
+    <!-- Top petal -->
+    <ellipse cx="64" cy="28" rx="12" ry="18" opacity="0.9"/>
+    <!-- Top right petal -->
+    <ellipse cx="80" cy="35" rx="12" ry="18" transform="rotate(60 80 35)" opacity="0.85"/>
+    <!-- Bottom right petal -->
+    <ellipse cx="80" cy="93" rx="12" ry="18" transform="rotate(120 80 93)" opacity="0.85"/>
+    <!-- Bottom petal -->
+    <ellipse cx="64" cy="100" rx="12" ry="18" opacity="0.9"/>
+    <!-- Bottom left petal -->
+    <ellipse cx="48" cy="93" rx="12" ry="18" transform="rotate(-60 48 93)" opacity="0.85"/>
+    <!-- Top left petal -->
+    <ellipse cx="48" cy="35" rx="12" ry="18" transform="rotate(-120 48 35)" opacity="0.85"/>
+  </g>
+  
+  <!-- Golden center -->
+  <circle cx="64" cy="64" r="18" fill="hsl(37 75% 50%)"/>
+  
+  <!-- Golden accent dots -->
+  <circle cx="64" cy="50" r="2" fill="hsl(36 52% 92%)"/>
+  <circle cx="72" cy="64" r="2" fill="hsl(36 52% 92%)"/>
+  <circle cx="64" cy="78" r="2" fill="hsl(36 52% 92%)"/>
+  <circle cx="56" cy="64" r="2" fill="hsl(36 52% 92%)"/>
+</svg>

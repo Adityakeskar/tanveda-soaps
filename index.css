@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm earthy tones inspired by the Tanveda logo */
+    --background: 33 35% 88%;
+    --foreground: 30 15% 12%;
+
+    --card: 35 30% 92%;
+    --card-foreground: 30 15% 12%;
+
+    --popover: 35 30% 92%;
+    --popover-foreground: 30 15% 12%;
+
+    --primary: 142 25% 32%;
+    --primary-foreground: 40 33% 96%;
+
+    --secondary: 30 25% 82%;
+    --secondary-foreground: 30 15% 18%;
+
+    --muted: 32 22% 85%;
+    --muted-foreground: 30 10% 42%;
+
+    --accent: 16 50% 50%;
+    --accent-foreground: 40 33% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 33 18% 78%;
+    --input: 33 18% 78%;
+    --ring: 142 25% 32%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+
+    --gradient-hero: linear-gradient(160deg, hsl(33 35% 88%), hsl(30 30% 84%), hsl(33 35% 88%));
+    --shadow-soft: 0 4px 24px -4px hsl(30 15% 12% / 0.06);
+    --shadow-card: 0 8px 32px -8px hsl(30 15% 12% / 0.08);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.18;
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,0.24) 1px, transparent 20%),
+      linear-gradient(180deg, rgba(255,255,255,0.14) 1px, transparent 18%),
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,0.12), transparent 18%),
+      radial-gradient(circle at 80% 30%, rgba(255,255,255,0.08), transparent 16%);
+    background-size: 1px 40px, 1px 60px, 140px 140px, 180px 180px;
+    background-position: 0 0, 20px 0, 0 0, 0 0;
+    animation: shower-fall 10s linear infinite;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes shower-fall {
+  from {
+    background-position: 0 0, 20px 0, 0 0, 0 0;
+  }
+  to {
+    background-position: 0 80px, 20px 120px, 0 60px, 0 90px;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-20 lg:py-28;
+  }
+
+  .heading-display {
+    font-family: var(--font-display);
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight;
+  }
+
+  .heading-section {
+    font-family: var(--font-display);
+    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+
+  .text-body-lg {
+    @apply text-lg md:text-xl leading-relaxed;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .animate-contact-blink {
+    animation: contact-blink 20.4s ease-in-out both;
+  }
+}
+
+@keyframes contact-blink {
+  0%, 15%, 30%, 45%, 60%, 75%, 90%, 100% {
+    box-shadow: none;
+    border-color: transparent;
+  }
+  10%, 25%, 40%, 55%, 70%, 85% {
+    box-shadow: 0 0 0 0.35rem rgba(239, 68, 68, 0.28);
+    border-color: rgb(239 68 68);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

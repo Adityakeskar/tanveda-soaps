@@ -3,8 +3,28 @@ import { MessageSquare, ArrowRight } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="section-padding relative overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+    <section id="contact" className="section-padding relative overflow-hidden" style={{ background: "#F4EFE5" }}>
+      {/* Animated background blobs */}
+      <motion.div
+        animate={{ scale: [1, 1.15, 1], x: [0, 20, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/8 blur-3xl pointer-events-none"
+      />
+      <motion.div
+        animate={{ scale: [1.1, 1, 1.1], x: [0, -20, 0] }}
+        transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-accent/10 blur-3xl pointer-events-none"
+      />
+      {/* Floating dots */}
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i}
+          animate={{ y: [0, -30, 0], x: [0, Math.sin(i) * 20, 0], opacity: [0.4, 0.8, 0.4] }}
+          transition={{ duration: 6 + i * 1.2, repeat: Infinity, ease: "easeInOut", delay: i * 0.8 }}
+          className="absolute w-1.5 h-1.5 rounded-full bg-accent/50 pointer-events-none"
+          style={{ top: `${20 + i * 14}%`, left: `${8 + i * 18}%` }}
+        />
+      ))}
 
       <div className="max-w-2xl mx-auto relative z-10 text-center">
         <motion.p

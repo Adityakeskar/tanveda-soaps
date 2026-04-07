@@ -12,6 +12,30 @@ const BenefitsSection = () => (
   <section id="benefits" className="section-padding relative overflow-hidden" style={{ backgroundColor: '#2D4A2D' }}>
     <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 pointer-events-none" />
 
+    {/* Floating organic elements - leaf-like particles */}
+    {[...Array(6)].map((_, i) => (
+      <motion.div
+        key={`benefit-float-${i}`}
+        animate={{
+          y: [0, -30, 0],
+          x: [0, Math.sin(i) * 40, 0],
+          opacity: [0.2, 0.5, 0.2],
+        }}
+        transition={{
+          duration: 6 + i,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute text-2xl pointer-events-none"
+        style={{
+          top: `${10 + i * 15}%`,
+          right: `${5 + i * 13}%`,
+        }}
+      >
+        {["🍃", "✨", "🌿"][i % 3]}
+      </motion.div>
+    ))}
+
     <div className="max-w-6xl mx-auto relative z-10">
       <div className="text-center mb-14">
         <motion.p
@@ -43,13 +67,24 @@ const BenefitsSection = () => (
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="flex flex-col items-center text-center max-w-[200px] group"
           >
-            {/* Organic circular icon */}
-            <div className="relative mb-4">
-              <div className="absolute -inset-2 rounded-full bg-primary/10 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Organic circular icon with soft glow animation */}
+            <motion.div
+              className="relative mb-4"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <motion.div
+                animate={{
+                  scale: [1, 1.15, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -inset-3 rounded-full bg-primary/20 blur-lg"
+              />
               <div className="relative w-16 h-16 rounded-full bg-white/15 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <b.icon className="w-7 h-7 text-white/90" />
               </div>
-            </div>
+            </motion.div>
 
             <h3 className="font-display text-base font-semibold text-white mb-1">{b.title}</h3>
             <p className="font-body text-sm text-white/70 leading-relaxed">{b.desc}</p>
