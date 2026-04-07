@@ -8,7 +8,7 @@ const features = [
 ];
 
 const AboutSection = () => (
-  <section id="about" className="section-padding relative overflow-hidden">
+  <section id="about" className="section-padding relative overflow-hidden" style={{ background: 'linear-gradient(170deg, hsl(33 35% 88%), hsl(30 40% 82%), hsl(25 35% 86%))' }}>
     {/* Decorative wave divider */}
     <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-transparent pointer-events-none" />
 
