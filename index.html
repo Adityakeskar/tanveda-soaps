@@ -8,7 +8,22 @@
     <meta name="keywords" content="organic soap, handcrafted soap, herbal soap, ayurvedic soap, natural soap India, Tanveda, chemical-free soap, cruelty-free soap">
     <meta name="author" content="Tanveda">
     <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/jpeg" href="/favicon.jpeg" />
+    <link rel="icon" type="image/jpeg" href="/tanveda-soaps/favicon.jpeg" />
+    <script>
+      // GitHub Pages SPA redirect: restore URL from ?p= param
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+        var query = window.location.search.slice(1);
+        if (query.startsWith('p=')) {
+          var path = query.split('&')[0].slice(2).replace(/~and~/g, '&');
+          history.replaceState(null, null, '/' + path + (query.slice(query.indexOf('&') + 1).startsWith('q=') ? '?' + query.split('&')[1].slice(2).replace(/~and~/g, '&') : '') + location.hash);
+        }
+      })();
+    </script>
     <link rel="canonical" href="https://tanvedasoaps.lovable.app/" />
 
     <meta property="og:type" content="website" />
