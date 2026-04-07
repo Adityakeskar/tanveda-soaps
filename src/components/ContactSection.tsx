@@ -11,7 +11,7 @@ const ContactSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-body text-sm tracking-[0.2em] uppercase text-accent mb-3"
+          className="font-body text-sm tracking-[0.2em] uppercase text-white/60 mb-3"
         >
           Feedback
         </motion.p>
