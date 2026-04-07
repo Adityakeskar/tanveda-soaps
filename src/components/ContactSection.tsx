@@ -29,7 +29,7 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-body-lg mb-8"
+          className="text-lg md:text-xl leading-relaxed text-white/70 mb-8"
         >
           Share your thoughts, suggestions or just say hi!
         </motion.p>
