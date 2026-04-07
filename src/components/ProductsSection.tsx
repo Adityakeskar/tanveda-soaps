@@ -5,7 +5,7 @@ import gandhamala from "@/assets/product-gandhamala.jpeg";
 import aloCalm from "@/assets/product-aloecalm.jpeg";
 import lemoPure from "@/assets/product-lemopure.jpeg";
 import blueMusk from "@/assets/product-bluemusk.jpeg";
-import waterDropletsBg from "@/assets/water-droplets-bg.jpg";
+import waterDropletsBg from "@/assets/water-droplets-light.jpg";
 
 const products = [
   {
