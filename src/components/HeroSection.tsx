@@ -29,83 +29,68 @@ const AnimatedLeaf = ({ delay }: { delay: number }) => (
 
 const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % soapImages.length);
-    }, 4000); // Change image every 4 seconds
-
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
-      {/* Animated background shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary/8 blur-3xl"
-        />
-        <motion.div
-          animate={{ scale: [1.1, 1, 1.1] }}
-          transition={{ duration: 10, repeat: Infinity, delay: 2 }}
-          className="absolute -bottom-20 -left-32 w-80 h-80 rounded-full bg-accent/6 blur-3xl"
-        />
-
-        {/* Floating leaf elements with organic drift */}
-        <AnimatedLeaf delay={0} />
-        <AnimatedLeaf delay={1.5} />
-        <AnimatedLeaf delay={3} />
-
-        {/* Floating soap bubbles - organic floating animation */}
-        {[...Array(3)].map((_, i) => (
+      {/* Animated background shapes - desktop only */}
+      {!isMobile && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            key={`bubble-${i}`}
-            animate={{
-              y: [0, -60, 0],
-              x: [0, Math.sin(i) * 30, 0],
-            }}
-            transition={{
-              duration: 6 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute rounded-full border border-accent/30 pointer-events-none"
-            style={{
-              width: `${40 + i * 15}px`,
-              height: `${40 + i * 15}px`,
-              top: `${20 + i * 25}%`,
-              left: `${10 + i * 30}%`,
-              background: `radial-gradient(circle at 30% 30%, rgba(51, 115, 85, 0.1), rgba(51, 115, 85, 0.02))`,
-            }}
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 8, repeat: Infinity }}
+            className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary/8 blur-3xl"
           />
-        ))}
-
-        {/* Gentle petal floats */}
-        {[...Array(2)].map((_, i) => (
           <motion.div
-            key={`petal-${i}`}
-            animate={{
-              y: [0, 100],
-              x: [0, Math.cos(i) * 50],
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 8 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute text-2xl pointer-events-none opacity-50"
-            style={{
-              top: `${-10 + i * 20}%`,
-              right: `${10 + i * 15}%`,
-            }}
-          >
-            🌸
-          </motion.div>
-        ))}
-      </div>
+            animate={{ scale: [1.1, 1, 1.1] }}
+            transition={{ duration: 10, repeat: Infinity, delay: 2 }}
+            className="absolute -bottom-20 -left-32 w-80 h-80 rounded-full bg-accent/6 blur-3xl"
+          />
+          <AnimatedLeaf delay={0} />
+          <AnimatedLeaf delay={1.5} />
+          <AnimatedLeaf delay={3} />
+          {[...Array(3)].map((_, i) => (
+            <motion.div
+              key={`bubble-${i}`}
+              animate={{ y: [0, -60, 0], x: [0, Math.sin(i) * 30, 0] }}
+              transition={{ duration: 6 + i * 2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute rounded-full border border-accent/30 pointer-events-none"
+              style={{
+                width: `${40 + i * 15}px`,
+                height: `${40 + i * 15}px`,
+                top: `${20 + i * 25}%`,
+                left: `${10 + i * 30}%`,
+                background: `radial-gradient(circle at 30% 30%, rgba(51, 115, 85, 0.1), rgba(51, 115, 85, 0.02))`,
+              }}
+            />
+          ))}
+          {[...Array(2)].map((_, i) => (
+            <motion.div
+              key={`petal-${i}`}
+              animate={{ y: [0, 100], x: [0, Math.cos(i) * 50], rotate: [0, 360] }}
+              transition={{ duration: 8 + i * 2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute text-2xl pointer-events-none opacity-50"
+              style={{ top: `${-10 + i * 20}%`, right: `${10 + i * 15}%` }}
+            >
+              🌸
+            </motion.div>
+          ))}
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
@@ -195,19 +180,21 @@ const HeroSection = () => {
                 className="absolute inset-0 flex items-center justify-center"
                 style={{ pointerEvents: index === currentImageIndex ? "auto" : "none" }}
               >
-                {/* Large soft glow - creates color transition, no visible bounds */}
-                <motion.div
-                  animate={{
-                    scale: index === currentImageIndex ? [0.9, 1.1, 0.9] : 0,
-                    opacity: index === currentImageIndex ? [0.25, 0.4, 0.25] : 0,
-                  }}
-                  transition={{ duration: 6, repeat: Infinity }}
-                  className="absolute w-[600px] h-[600px] rounded-full bg-gradient-to-r from-primary/60 via-accent/40 to-primary/60 blur-3xl pointer-events-none"
-                />
+                {/* Large soft glow - desktop only */}
+                {!isMobile && (
+                  <motion.div
+                    animate={{
+                      scale: index === currentImageIndex ? [0.9, 1.1, 0.9] : 0,
+                      opacity: index === currentImageIndex ? [0.25, 0.4, 0.25] : 0,
+                    }}
+                    transition={{ duration: 6, repeat: Infinity }}
+                    className="absolute w-[600px] h-[600px] rounded-full bg-gradient-to-r from-primary/60 via-accent/40 to-primary/60 blur-3xl pointer-events-none"
+                  />
+                )}
 
-                {/* Image - seamless blend with ultra-soft feathered edges */}
+                {/* Image */}
                 <motion.div
-                  animate={{
+                  animate={isMobile ? {} : {
                     y: index === currentImageIndex ? [0, -20, 0] : 0,
                     rotateZ: index === currentImageIndex ? [0, 2, -2, 0] : 0,
                   }}
@@ -225,8 +212,8 @@ const HeroSection = () => {
                   />
                 </motion.div>
 
-                {/* Organic floating particles - sparse */}
-                {index === currentImageIndex && (
+                {/* Organic floating particles - desktop only */}
+                {!isMobile && index === currentImageIndex && (
                   <>
                     {[...Array(5)].map((_, i) => (
                       <motion.div
@@ -258,9 +245,7 @@ const HeroSection = () => {
             className="absolute bottom-12 left-12 z-30"
           >
             <motion.div
-              animate={{
-                y: [0, -6, 0],
-              }}
+              animate={isMobile ? {} : { y: [0, -6, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
               <p className="font-display text-xl font-semibold text-foreground">
