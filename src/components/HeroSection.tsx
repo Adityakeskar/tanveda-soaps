@@ -161,7 +161,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="relative w-full h-full min-h-[600px] flex items-center justify-center overflow-hidden"
+          className="hidden md:flex relative w-full h-full min-h-[600px] items-center justify-center overflow-hidden"
         >
           {/* Seamless blend - no background, transparent to show body gradient */}
           <div className="absolute inset-0" />
